@@ -61,7 +61,7 @@ class InteractiveRecord
   def self.find_by(hash)
     sql = "SELECT * FROM #{self.table_name} WHERE ? = ?"
     binding.pry
-    attribute = hash.keys[0]
+    hash.keys[0]
     new_instance = DB[:conn].execute(sql, attribute.to_s, hash[attribute])
   end
 
