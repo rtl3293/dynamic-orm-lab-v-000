@@ -61,7 +61,7 @@ class InteractiveRecord
   def self.find_by(hash)
     sql = "SELECT * FROM #{self.table_name} WHERE #{hash.keys[0].to_s} = #{hash[hash.keys[0]].downcase}"
     binding.pry
-    new_instance = DB[:conn].execute(sql)
+    DB[:conn].execute(sql)
   end
 
 
