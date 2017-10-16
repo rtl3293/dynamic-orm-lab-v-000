@@ -62,7 +62,7 @@ class InteractiveRecord
     sql = "SELECT * FROM #{self.table_name} WHERE ? = ?"
     binding.pry
     attribute = hash.keys[0]
-    DB[:conn].execute(sql, attribute.to_s, attribute[attribute.keys[0]])
+    DB[:conn].execute(sql, attribute.to_s, attribute[hash])
   end
 
 
