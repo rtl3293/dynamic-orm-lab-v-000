@@ -59,9 +59,9 @@ class InteractiveRecord
   end
 
   def self.find_by(hash)
-    sql = "SELECT * FROM #{self.table_name} WHERE ? = ?"
+    sql = "SELECT * FROM #{self.table_name} WHERE #{hash.keys[0].to_s} = #{hash[hash.keys[0]]}"
     binding.pry
-    new_instance = DB[:conn].execute(sql, hash.keys[0].to_s, hash[hash.keys[0]])
+    new_instance = DB[:conn].execute(sql, , hash[hash.keys[0]])
   end
 
 
