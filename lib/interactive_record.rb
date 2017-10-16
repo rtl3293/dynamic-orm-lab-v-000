@@ -60,7 +60,7 @@ class InteractiveRecord
 
   def self.find_by(hash)
     sql = "SELECT * FROM #{self.table_name} WHERE #{hash.keys[0].to_s} = #{hash[hash.keys[0]].downcase}"
-    #binding.pry
+    binding.pry
     DB[:conn].execute(sql)
   end
 
